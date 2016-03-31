@@ -56,6 +56,26 @@
 			echo $e->getMessage();
 			exit;
 		}
+	}
+
+	function bd_read_log(){
+		try
+		{
+			$connexion = connect();
+			$req = "SELECT date,msg FROM logs";
+			$sth = $connexion->prepare($req);
+			$sth->execute();
+			//$result = $sth->fetch(PDO::FETCH_ASSOC);
+			while ($result = $sth->fetch(PDO::FETCH_ASSOC)){
+				$res = $res."$result[date] : $result[msg] <br/>";
+			}
+			return $res;
+		}
+		catch (PDOException $e)
+		{
+			echo $e->getMessage();
+			exit;
+		}
 	} 
  
 
