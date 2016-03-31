@@ -1,0 +1,3 @@
+bob:azerty
+curt:qwerty
+pat:etoile
