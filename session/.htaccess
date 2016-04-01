@@ -1,0 +1,6 @@
+#Pour réécrire les URL sans le php
+
+RewriteEngine On
+
+RewriteCond	%{REQUEST_FILENAME} !\.php$
+RewriteRule (.*) $1.php
